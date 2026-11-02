@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking Pengiriman - Toko Buku</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <h2>Toko Buku Online</h2>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="stok.html">Katalog Stok</a>
+            <a href="checkout.html">Pemesanan</a>
+            <a href="tracking.html" class="active">Tracking</a>
+            <a href="index.html" class="btn-logout">Logout</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Lacak Status Pengiriman (Delivery Order)</h2>
+        <div class="card-form" style="margin-top: 20px;">
+            <div class="form-group">
+                <label>Nomor Delivery Order (Coba: <code>20230012</code> atau <code>20230013</code>)</label>
+                <input type="text" id="inputNoDO" placeholder="Masukkan Nomor DO...">
+            </div>
+            <button onclick="cariPengiriman()" class="btn-primary">Cari Pengiriman</button>
+        </div>
+
+        <div id="hasilTracking" class="card-form" style="display:none; margin-top: 20px;">
+            <h3>Detail Pengiriman</h3>
+            <p><strong>Nomor DO:</strong> <span id="trkNomorDO"></span></p>
+            <p><strong>Nama Pemesan:</strong> <span id="trkNama"></span></p>
+            <p><strong>Status:</strong> <span id="trkStatus" style="color: #2980b9; font-weight: bold;"></span></p>
+            <p><strong>Ekspedisi:</strong> <span id="trkEkspedisi"></span></p>
+            <p><strong>Tanggal Kirim:</strong> <span id="trkTanggal"></span></p>
+            <p><strong>Kode Paket:</strong> <span id="trkPaket"></span></p>
+            <p><strong>Total Pembayaran:</strong> <span id="trkTotal"></span></p>
+            
+            <div style="margin-top: 15px;">
+                <strong>Riwayat Perjalanan (Timeline):</strong>
+                <div id="trkPerjalanan" style="background: #f8f9fa; padding: 12px; border-radius: 5px; margin-top: 5px; font-size: 0.9rem; border-left: 4px solid #3498db;"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

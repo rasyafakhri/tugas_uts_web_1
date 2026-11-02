@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Stok Buku - Toko Buku</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <h2>Toko Buku Online</h2>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="stok.html" class="active">Katalog Stok</a>
+            <a href="checkout.html">Pemesanan</a>
+            <a href="tracking.html">Tracking</a>
+            <a href="index.html" class="btn-logout">Logout</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Manajemen Stok & Katalog Buku</h2>
+
+        <!-- Form Tambah Stok Baru via DOM -->
+        <div class="card-form" style="margin: 20px 0;">
+            <h3>Tambah Buku Baru ke Katalog</h3>
+            <form id="formTambahStok">
+                <div class="form-group"><input type="text" id="kodeBarang" placeholder="Kode Barang (Cth: UNT001)" required></div>
+                <div class="form-group"><input type="text" id="namaBarang" placeholder="Nama Barang / Judul Buku" required></div>
+                <div class="form-group"><input type="text" id="jenisBarang" placeholder="Jenis Barang (Cth: Buku Ajar)" required></div>
+                <div class="form-group"><input type="text" id="edisiBarang" placeholder="Edisi (Cth: 1)" required></div>
+                <div class="form-group"><input type="number" id="stokBarang" placeholder="Jumlah Stok" required></div>
+                <div class="form-group"><input type="number" id="hargaBarang" placeholder="Harga (Angka saja, cth: 150000)" required></div>
+                <button type="submit" class="btn-primary">Tambah ke Katalog</button>
+            </form>
+        </div>
+
+        <!-- Tabel Katalog Dinamis -->
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Kode</th>
+                    <th>Nama Barang</th>
+                    <th>Jenis & Edisi</th>
+                    <th>Harga</th>
+                    <th>Stok</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="tabelStokBody">
+            </tbody>
+        </table>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
